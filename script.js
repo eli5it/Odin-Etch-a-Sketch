@@ -24,7 +24,7 @@ function makeGrid(gridLength, numSquares) {
 }
 
 
-function addStyle() {
+function addStyle(styleColor) {
   let gridSquares = document.querySelectorAll(".grid-square")
   gridSquares.forEach(square => square.addEventListener('mouseover',() => {
       square.style.backgroundColor = "black";
@@ -56,6 +56,24 @@ function deleteBoard() {
     delSquare.forEach(square => square.remove());
 
 }
+
+function makeRandomColor() {
+    // need to generate 3 random numbers
+    // & assign RGB color with nums
+    // returns the rbg code formatted as string
+    let vals = []
+    for (i = 0; i < 3; i++) {
+        val= Math.round(Math.random() * 255);
+        console.log(val);
+        vals[i] = val.toString();
+    }
+    
+    return vals;
+    
+    }
+
+
+
 
 makeGrid(gridLength, numSquares);
 addStyle();
